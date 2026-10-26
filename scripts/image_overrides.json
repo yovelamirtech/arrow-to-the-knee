@@ -1,0 +1,9 @@
+{
+  "two-handed-warhammer": {
+    "resist-fire": { "uespFile": "File:SR-icon-potion-ResistFirePotion.png" },
+    "barbarian": { "uespFile": "File:SR-skill-Two-handed.png" },
+    "daedric-smithing": { "uespFile": "File:SR-ingredient-Daedra Heart.jpg" },
+    "dragon-armor": { "uespFile": "File:SR-icon-misc-DragonScales.png" },
+    "black-star": { "uespFile": "File:SR-item-The Black Star.jpg" }
+  }
+}

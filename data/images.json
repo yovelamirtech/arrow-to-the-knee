@@ -1,0 +1,220 @@
+{
+  "two-handed-warhammer": {
+    "longhammer": {
+      "file": "assets/img/two-handed-warhammer/longhammer.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/The_Longhammer"
+    },
+    "volendrung": {
+      "file": "assets/img/two-handed-warhammer/volendrung.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Volendrung_(Skyrim)"
+    },
+    "trollsbane": {
+      "file": "assets/img/two-handed-warhammer/trollsbane.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Trollsbane"
+    },
+    "daedric-warhammer": {
+      "file": "assets/img/two-handed-warhammer/daedric-warhammer.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Daedric_Warhammer_(Skyrim)"
+    },
+    "dragonbone-warhammer": {
+      "file": "assets/img/two-handed-warhammer/dragonbone-warhammer.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Dragonbone_Warhammer"
+    },
+    "ebony-mail": {
+      "file": "assets/img/two-handed-warhammer/ebony-mail.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Ebony_Mail_(Skyrim)"
+    },
+    "dragonplate-set": {
+      "file": "assets/img/two-handed-warhammer/dragonplate-set.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Dragonplate_Armor_(Skyrim)"
+    },
+    "dragon-materials": {
+      "file": "assets/img/two-handed-warhammer/dragon-materials.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Dragon_Bone_(Skyrim)"
+    },
+    "gauldur-amulet": {
+      "file": "assets/img/two-handed-warhammer/gauldur-amulet.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/The_Gauldur_Amulet"
+    },
+    "fortify-twohanded-gear": {
+      "file": "assets/img/two-handed-warhammer/fortify-twohanded-gear.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Orcish_Gauntlets_(Skyrim)"
+    },
+    "fortify-smithing-gear": {
+      "file": "assets/img/two-handed-warhammer/fortify-smithing-gear.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Blacksmith%27s_Apron_(Skyrim)"
+    },
+    "resist-fire": {
+      "file": "assets/img/two-handed-warhammer/resist-fire.png",
+      "source": "https://en.uesp.net/wiki/File:SR-icon-potion-ResistFirePotion.png"
+    },
+    "unrelenting-force": {
+      "file": "assets/img/two-handed-warhammer/unrelenting-force.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Unrelenting_Force_(Skyrim)"
+    },
+    "whirlwind-sprint": {
+      "file": "assets/img/two-handed-warhammer/whirlwind-sprint.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Whirlwind_Sprint"
+    },
+    "elemental-fury": {
+      "file": "assets/img/two-handed-warhammer/elemental-fury.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Elemental_Fury"
+    },
+    "become-ethereal": {
+      "file": "assets/img/two-handed-warhammer/become-ethereal.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Become_Ethereal"
+    },
+    "dragonrend": {
+      "file": "assets/img/two-handed-warhammer/dragonrend.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Dragonrend"
+    },
+    "marked-for-death": {
+      "file": "assets/img/two-handed-warhammer/marked-for-death.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Marked_for_Death"
+    },
+    "soul-trap": {
+      "file": "assets/img/two-handed-warhammer/soul-trap.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Soul_Trap_(Skyrim)"
+    },
+    "transmute": {
+      "file": "assets/img/two-handed-warhammer/transmute.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Transmute_Mineral_Ore"
+    },
+    "muffle": {
+      "file": "assets/img/two-handed-warhammer/muffle.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Muffle"
+    },
+    "agent-of-mara": {
+      "file": "assets/img/two-handed-warhammer/agent-of-mara.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/The_Book_of_Love"
+    },
+    "agent-of-dibella": {
+      "file": "assets/img/two-handed-warhammer/agent-of-dibella.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/The_Heart_of_Dibella"
+    },
+    "ancient-knowledge": {
+      "file": "assets/img/two-handed-warhammer/ancient-knowledge.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Unfathomable_Depths"
+    },
+    "seeker-of-might": {
+      "file": "assets/img/two-handed-warhammer/seeker-of-might.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Black_Books"
+    },
+    "oghma-infinium": {
+      "file": "assets/img/two-handed-warhammer/oghma-infinium.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Oghma_Infinium_(Skyrim)"
+    },
+    "aetherial-crown": {
+      "file": "assets/img/two-handed-warhammer/aetherial-crown.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Aetherial_Crown"
+    },
+    "mora-boon": {
+      "file": "assets/img/two-handed-warhammer/mora-boon.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Tel_Mithryn"
+    },
+    "dragonborn-force": {
+      "file": "assets/img/two-handed-warhammer/dragonborn-force.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Nchardak"
+    },
+    "sailors-repose": {
+      "file": "assets/img/two-handed-warhammer/sailors-repose.jpg",
+      "source": "https://en.uesp.net/wiki/Skyrim:Frostflow_Abyss"
+    },
+    "warrior-stone": {
+      "file": "assets/img/two-handed-warhammer/warrior-stone.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/The_Warrior_Stone_(Skyrim)"
+    },
+    "lord-stone": {
+      "file": "assets/img/two-handed-warhammer/lord-stone.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/The_Lord_Stone_(Skyrim)"
+    },
+    "atronach-stone": {
+      "file": "assets/img/two-handed-warhammer/atronach-stone.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/The_Atronach_Stone_(Skyrim)"
+    },
+    "steed-stone": {
+      "file": "assets/img/two-handed-warhammer/steed-stone.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/The_Steed_Stone_(Skyrim)"
+    },
+    "barbarian": {
+      "file": "assets/img/two-handed-warhammer/barbarian.png",
+      "source": "https://en.uesp.net/wiki/File:SR-skill-Two-handed.png"
+    },
+    "champions-stance": {
+      "file": "assets/img/two-handed-warhammer/champions-stance.png",
+      "source": "https://en.uesp.net/wiki/Skyrim:Two-handed"
+    },
+    "skullcrusher": {
+      "file": "assets/img/two-handed-warhammer/skullcrusher.png",
+      "source": "https://en.uesp.net/wiki/Skyrim:Two-handed"
+    },
+    "devastating-blow": {
+      "file": "assets/img/two-handed-warhammer/devastating-blow.png",
+      "source": "https://en.uesp.net/wiki/Skyrim:Two-handed"
+    },
+    "juggernaut": {
+      "file": "assets/img/two-handed-warhammer/juggernaut.png",
+      "source": "https://en.uesp.net/wiki/Skyrim:Heavy_Armor"
+    },
+    "conditioning": {
+      "file": "assets/img/two-handed-warhammer/conditioning.png",
+      "source": "https://en.uesp.net/wiki/Skyrim:Heavy_Armor"
+    },
+    "steel-smithing": {
+      "file": "assets/img/two-handed-warhammer/steel-smithing.jpg",
+      "source": "https://en.uesp.net/wiki/Skyrim:Steel"
+    },
+    "orcish-smithing": {
+      "file": "assets/img/two-handed-warhammer/orcish-smithing.jpg",
+      "source": "https://en.uesp.net/wiki/Skyrim:Orcish"
+    },
+    "arcane-blacksmith": {
+      "file": "assets/img/two-handed-warhammer/arcane-blacksmith.png",
+      "source": "https://en.uesp.net/wiki/Skyrim:Smithing"
+    },
+    "daedric-smithing": {
+      "file": "assets/img/two-handed-warhammer/daedric-smithing.jpg",
+      "source": "https://en.uesp.net/wiki/File:SR-ingredient-Daedra_Heart.jpg"
+    },
+    "dragon-armor": {
+      "file": "assets/img/two-handed-warhammer/dragon-armor.png",
+      "source": "https://en.uesp.net/wiki/File:SR-icon-misc-DragonScales.png"
+    },
+    "enchanter": {
+      "file": "assets/img/two-handed-warhammer/enchanter.png",
+      "source": "https://en.uesp.net/wiki/Skyrim:Enchanting"
+    },
+    "insightful-enchanter": {
+      "file": "assets/img/two-handed-warhammer/insightful-enchanter.png",
+      "source": "https://en.uesp.net/wiki/Skyrim:Enchanting"
+    },
+    "quick-reflexes": {
+      "file": "assets/img/two-handed-warhammer/quick-reflexes.png",
+      "source": "https://en.uesp.net/wiki/Skyrim:Block"
+    },
+    "lydia": {
+      "file": "assets/img/two-handed-warhammer/lydia.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Lydia_(Skyrim)"
+    },
+    "mjoll": {
+      "file": "assets/img/two-handed-warhammer/mjoll.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Mjoll_the_Lioness"
+    },
+    "breezehome": {
+      "file": "assets/img/two-handed-warhammer/breezehome.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Breezehome"
+    },
+    "companions": {
+      "file": "assets/img/two-handed-warhammer/companions.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/The_Companions"
+    },
+    "black-star": {
+      "file": "assets/img/two-handed-warhammer/black-star.jpg",
+      "source": "https://en.uesp.net/wiki/File:SR-item-The_Black_Star.jpg"
+    },
+    "trainers-extra": {
+      "file": "assets/img/two-handed-warhammer/trainers-extra.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Trainers_(Skyrim)"
+    }
+  }
+}
