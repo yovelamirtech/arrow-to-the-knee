@@ -1028,15 +1028,29 @@
           "nameEn": "The Companions",
           "priority": "high",
           "minLevel": null,
-          "summary": "גילדת הלוחמים בוייטראן, עם מאמנים ברמה הגבוהה ביותר לכל הבילד שלך.",
-          "why": "Vilkas מאמן דו-ידני, Farkas מאמן שריון כבד, ו-Eorlund מאמן נפחות. כולם ברמת Master.",
+          "summary": "גילדת הלוחמים בוייטראן, עם מאמנים ברמה הגבוהה ביותר לכל הבילד שלך, ושרשרת משימות של 6 משימות.",
+          "why": "Vilkas מאמן דו-ידני, Farkas מאמן שריון כבד, ו-Eorlund Gray-Mane מאמן נפחות. שלושתם ברמת Master (עד 90), וכולם באותו מקום. בסוף השרשרת מקבלים גם מלווים חדשים, מגן ייחודי ללידיה ומילה לשאגה.",
           "howToGet": [
-            "ללכת ל-Jorrvaskr בוייטראן ולדבר עם Kodlak Whitemane.",
-            "Eorlund מאמן נפחות אחרי המשימה הראשונה Take Up Arms, עד רמה 90."
+            "ללכת ל-Jorrvaskr, אולם המדה של הגילדה ברובע הרוח (Wind District) בוייטראן, ליד ה-Skyforge ומתחת ל-Dragonsreach.",
+            "לדבר עם Kodlak Whitemane, ה-Harbinger (ראש הגילדה). בדרך כלל הוא באולם הראשי או בחדרים בקומה התחתונה.",
+            "Take Up Arms: Kodlak שולח אותך ל-Vilkas לקרב אימון בחצר. אחר כך לוקחים את החרב של Vilkas ל-Eorlund ב-Skyforge, ו-Farkas מראה לך את חדרי השינה. מעכשיו אתה חבר, והמאמנים זמינים.",
+            "משימות קטנות: לקחת לפחות משימה אחת מ-Farkas, Vilkas, Aela או Skjor (חיסול חיה, הפחדה של מישהו וכו').",
+            "Proving Honor: Skjor שולח אותך עם Farkas ל-Dustman's Cairn, צפון-מערבית לוייטראן, להביא שבר של הגרזן Wuuthrad.",
+            "The Silver Hand: טקס ב-Underforge, מתחת ל-Skyforge, שבו הופכים לאיש זאב. אחר כך מחסלים את ציידי אנשי הזאב במבצר Gallows Rock.",
+            "Blood's Honor: Kodlak שולח אותך ל-Glenmoril Coven ליד פולקריית' להביא ראש של מכשפה. כשחוזרים, Jorrvaskr הותקף ו-Kodlak נהרג.",
+            "Purity of Revenge: עם Vilkas למבצר Driftshade Refuge של ה-Silver Hand, להביא את שאר השברים של Wuuthrad ולחסל את ה-Silver Hand.",
+            "Glory of the Dead: Eorlund מחבר את Wuuthrad ב-Skyforge, ומשם ל-Ysgramor's Tomb בצפון-מערב Winterhold. בסוף מרפאים את הנשמה של Kodlak ונהיים ה-Harbinger."
           ],
           "notes": [
-            "במהלך הסדרה הסיפור הופך אותך לאיש זאב. בסוף הסדרה יש אפשרות להירפא.",
-            "אפשר להתאמן עד 5 פעמים בכל רמת דמות."
+            "אפשר להתאמן עד 5 פעמים בכל רמת דמות. Master מאמן עד 90, Expert עד 75.",
+            "מאמנים נוספים בגילדה: Njada Stonearm מאמנת חסימה ברמת Expert (שימושי ל-Quick Reflexes). Aela מאמנת קשתות ו-Athis נשק חד-ידני, פחות רלוונטי לבילד.",
+            "במשימה The Silver Hand הסיפור הופך אותך לאיש זאב, ואי אפשר להמשיך את השרשרת בלי זה.",
+            "איש זאב לא מקבל את הבונוס של שינה במיטה (Rested), כך שההתקדמות בכישורים איטית יותר עד שמבריאים.",
+            "ריפוי: שומרים ראש נוסף של מכשפת Glenmoril, ואחרי Glory of the Dead זורקים אותו לאש ב-Ysgramor's Tomb. המשימה Purity מרפאת באותה דרך גם את Farkas ואת Vilkas.",
+            "Wuuthrad הוא גרזן דו-ידני ולא פטיש, אז Skullcrusher לא עובד עליו. נשק טוב לאספנות, פחות לבילד.",
+            "בקבר של Ysgramor יש את Shield of Ysgramor. לא מתאים לך עם נשק דו-ידני, אבל מצוין ללידיה.",
+            "בקבר יש גם קיר מילים של Animal Allegiance, וב-Dustman's Cairn קיר של Fire Breath.",
+            "אחרי סוף השרשרת, Farkas, Vilkas, Aela, Athis, Njada, Ria ו-Torvar יכולים להיות מלווים. עם Farkas, Vilkas ו-Aela אפשר גם להתחתן."
           ],
           "wikiTitle": "Skyrim:Companions",
           "imageQuery": "Jorrvaskr Whiterun"
@@ -1067,14 +1081,16 @@
           "nameEn": "Torbjorn, Balimund, Hamal",
           "priority": "low",
           "minLevel": null,
-          "summary": "מאמנים בערים אחרות.",
+          "summary": "מאמנים בערים אחרות, למקרה שאתה רחוק מוייטראן או צריך כישוף חפצים.",
           "why": "אם אתה רחוק מוייטראן, או לכישוף חפצים.",
           "howToGet": [
-            "Torbjorn Shatter-Shield בוינדהלם: דו-ידני ברמת Expert.",
-            "Balimund בריפטן: נפחות ברמת Expert.",
-            "Hamal במרקארת': כישוף חפצים ברמת Master, אחרי The Heart of Dibella."
+            "Torbjorn Shatter-Shield בוינדהלם: דו-ידני ברמת Expert. גר בבית של משפחת Shatter-Shield ברובע Valunstrad.",
+            "Balimund בריפטן: נפחות ברמת Expert. הנפח של The Scorched Hammer.",
+            "Hamal במרקארת': כישוף חפצים ברמת Master, במקדש של Dibella. מאמנת רק אחרי המשימה The Heart of Dibella."
           ],
-          "notes": [],
+          "notes": [
+            "כל המאמנים חולקים את אותה מגבלה: עד 5 אימונים בכל רמת דמות, בלי קשר למאמן."
+          ],
           "wikiTitle": "Skyrim:Trainers",
           "imageQuery": "Skyrim trainer"
         }
