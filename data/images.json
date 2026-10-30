@@ -215,6 +215,14 @@
     "trainers-extra": {
       "file": "assets/img/two-handed-warhammer/trainers-extra.webp",
       "source": "https://elderscrolls.fandom.com/wiki/Trainers_(Skyrim)"
+    },
+    "summon-arvak": {
+      "file": "assets/img/two-handed-warhammer/summon-arvak.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Arvak"
+    },
+    "ill-met-by-moonlight": {
+      "file": "assets/img/two-handed-warhammer/ill-met-by-moonlight.webp",
+      "source": "https://elderscrolls.fandom.com/wiki/Ill_Met_by_Moonlight"
     }
   }
 }
