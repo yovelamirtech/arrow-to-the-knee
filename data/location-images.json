@@ -1,0 +1,154 @@
+{
+  "ansilvund": {
+    "file": "assets/img/locations/ansilvund.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Ansilvund_Map2.jpg"
+  },
+  "autumnwatch-tower": {
+    "file": "assets/img/locations/autumnwatch-tower.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Autmnwatch_tower_Map.png"
+  },
+  "bleak-falls-barrow": {
+    "file": "assets/img/locations/bleak-falls-barrow.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Bleak_Falls_Barrow_MapLocation.png"
+  },
+  "bloated-mans-grotto": {
+    "file": "assets/img/locations/bloated-mans-grotto.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Bloated_Man%27s_Grotto_Maplocation.png"
+  },
+  "college-of-winterhold": {
+    "file": "assets/img/locations/college-of-winterhold.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:College_of_winterhold_map.png"
+  },
+  "dragontooth-crater": {
+    "file": "assets/img/locations/dragontooth-crater.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Dragontooth_Crater_Map.jpg"
+  },
+  "dustmans-cairn": {
+    "file": "assets/img/locations/dustmans-cairn.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Dustman%27s_Cairn_Maplocation.png"
+  },
+  "falkreath": {
+    "file": "assets/img/locations/falkreath.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Falkreath_(Skyrim)_Maplocation.png"
+  },
+  "folgunthur": {
+    "file": "assets/img/locations/folgunthur.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Folgunthur_Map.jpg"
+  },
+  "forsaken-cave": {
+    "file": "assets/img/locations/forsaken-cave.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Forsaken_Cave_Maplocation.png"
+  },
+  "frofnir-troll-lair": {
+    "file": "assets/img/locations/frofnir-troll-lair.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Skyrim_location_trollsbane.jpg"
+  },
+  "frostflow-lighthouse": {
+    "file": "assets/img/locations/frostflow-lighthouse.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Frostflow_map.jpg"
+  },
+  "gallows-rock": {
+    "file": "assets/img/locations/gallows-rock.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Gallows_map.jpg"
+  },
+  "geirmunds-hall": {
+    "file": "assets/img/locations/geirmunds-hall.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Geirmund%27s_Hall_Maplocation.png"
+  },
+  "gjukars-monument": {
+    "file": "assets/img/locations/gjukars-monument.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Gjukars_monument_map.jpg"
+  },
+  "glenmoril-coven": {
+    "file": "assets/img/locations/glenmoril-coven.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Glenmoril_map.jpg"
+  },
+  "guardian-stones": {
+    "file": "assets/img/locations/guardian-stones.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Guardian_stones_map.jpg"
+  },
+  "halted-stream-camp": {
+    "file": "assets/img/locations/halted-stream-camp.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Halted_Stream_Camp_Map.png"
+  },
+  "high-hrothgar": {
+    "file": "assets/img/locations/high-hrothgar.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:High_Hrothgar_MapLocation.png"
+  },
+  "ivarstead": {
+    "file": "assets/img/locations/ivarstead.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Ivarstead_World_Map.png"
+  },
+  "largashbur": {
+    "file": "assets/img/locations/largashbur.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:LargashburMap.jpg"
+  },
+  "liars-retreat": {
+    "file": "assets/img/locations/liars-retreat.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Liar%27s_Retreat_map_location.jpg"
+  },
+  "markarth": {
+    "file": "assets/img/locations/markarth.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Markarth_Map.jpg"
+  },
+  "mzinchaleft": {
+    "file": "assets/img/locations/mzinchaleft.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Mzinchaleft_Map.jpg"
+  },
+  "nchardak": {
+    "file": "assets/img/locations/nchardak.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Nchardak_Map.png"
+  },
+  "reachwater-rock": {
+    "file": "assets/img/locations/reachwater-rock.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Reachwater_Rock_Maplocation.png"
+  },
+  "riften": {
+    "file": "assets/img/locations/riften.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Riften(Location).jpg"
+  },
+  "ruins-of-bthalft": {
+    "file": "assets/img/locations/ruins-of-bthalft.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Ruins_of_Bthalft_Map.jpg"
+  },
+  "saarthal": {
+    "file": "assets/img/locations/saarthal.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Saarthal_Map.jpg"
+  },
+  "sacellum-of-boethiah": {
+    "file": "assets/img/locations/sacellum-of-boethiah.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:SacellumOfBoethiah(Location).jpg"
+  },
+  "septimus-signus-outpost": {
+    "file": "assets/img/locations/septimus-signus-outpost.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Septimus_Signus%27s_Outpost_Map.png"
+  },
+  "shrine-of-azura": {
+    "file": "assets/img/locations/shrine-of-azura.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Shrine_of_Azura_(Skyrim)_Maplocation.png"
+  },
+  "statue-to-meridia": {
+    "file": "assets/img/locations/statue-to-meridia.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Statue_to_Meridia_Map.jpg"
+  },
+  "steed-stone": {
+    "file": "assets/img/locations/steed-stone.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:The_Steed_Stone_Map.png"
+  },
+  "tel-mithryn": {
+    "file": "assets/img/locations/tel-mithryn.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Tel_Mithryn_Map.png"
+  },
+  "throat-of-the-world": {
+    "file": "assets/img/locations/throat-of-the-world.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Throat_of_the_world_map.jpg"
+  },
+  "ustengrav": {
+    "file": "assets/img/locations/ustengrav.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Ustengrav_Maplocation.png"
+  },
+  "ysgramors-tomb": {
+    "file": "assets/img/locations/ysgramors-tomb.webp",
+    "source": "https://elderscrolls.fandom.com/wiki/File:Ysgramor%27s_Tomb_-_Map_(Skyrim).png"
+  }
+}

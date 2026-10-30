@@ -66,6 +66,9 @@
             "הפטיש מונח ליד הגופה של שודד בשם Rahd.",
             "במערה יש אויבים מסוג פאלמר, כדאי להגיע מוכן."
           ],
+          "locations": [
+            "liars-retreat"
+          ],
           "notes": [
             "באג ידוע: לפעמים הפטיש נופל מתחת לשולחן ולא ליד הגופה.",
             "נזק בסיס 21, מהירות 0.8 (פטיש רגיל: 0.6).",
@@ -89,6 +92,9 @@
             "לעזור לאורקים להדוף ענק שתוקף את המחנה.",
             "להשלים את המשימה The Cursed Tribe עבור הישות הדאדרית Malacath. חלק מהפריטים הנדרשים נאספים במהלך המשימה."
           ],
+          "locations": [
+            "largashbur"
+          ],
           "notes": [
             "הוא מכושף, ולכן Elemental Fury לא עובדת עליו.",
             "נזק בסיס 25, מהירות 0.7.",
@@ -109,6 +115,9 @@
           "howToGet": [
             "באזור The Reach, במאורת טרולים בין Cradle Stone Tower לבין Valthume.",
             "הפטיש נמצא על הגופה של Frofnir Trollsbane. יש טרולים באזור."
+          ],
+          "locations": [
+            "frofnir-troll-lair"
           ],
           "notes": [
             "15 נקודות נזק אש, רק נגד טרולים. נגד כל השאר זה פטיש רגיל עם נזק בסיס 20.",
@@ -169,6 +178,9 @@
           "howToGet": [
             "מרמה 30: לקרוא את הספר Boethiah's Proving, או ללכת ישירות למקדש Sacellum of Boethiah.",
             "להשלים את המשימה Boethiah's Calling."
+          ],
+          "locations": [
+            "sacellum-of-boethiah"
           ],
           "notes": [
             "המשימה דורשת להקריב מלווה. אל תביא את המלווה הקבוע שלך.",
@@ -234,6 +246,12 @@
             "להתחיל את המשימה Forbidden Legend (בדרך כלל מספר או מהמקום Folgunthur).",
             "לאסוף את שלושת החלקים: ב-Folgunthur, ב-Saarthal וב-Geirmund's Hall.",
             "לחבר את הקמע מחדש במקום Reachwater Rock."
+          ],
+          "locations": [
+            "folgunthur",
+            "saarthal",
+            "geirmunds-hall",
+            "reachwater-rock"
           ],
           "notes": [
             "החלק שב-Saarthal מושג במהלך משימת הקולג' של המכשפים בוינטרהולד.",
@@ -309,6 +327,10 @@
             "המילה הראשונה בקיר המילים ב-Bleak Falls Barrow, בעלילה הראשית המוקדמת.",
             "המילים הבאות מה-Greybeards במהלך העלילה הראשית."
           ],
+          "locations": [
+            "bleak-falls-barrow",
+            "high-hrothgar"
+          ],
           "notes": [
             "צריך לפתוח כל מילה עם נשמת דרקון בתפריט השאגות."
           ],
@@ -327,6 +349,9 @@
           "howToGet": [
             "מה-Greybeards במהלך המשימה הראשית The Way of the Voice."
           ],
+          "locations": [
+            "high-hrothgar"
+          ],
           "notes": [],
           "wikiTitle": "Skyrim:Whirlwind Sprint",
           "imageQuery": "Whirlwind Sprint Skyrim"
@@ -344,6 +369,11 @@
             "Statue to Meridia: במעלה ההר צפון-מזרחית לפסל, מערבית לסוליטיוד. הקיר כמעט לא שמור.",
             "Shriekwind Bastion: צינוק צפון-מזרחית לפולקריית'.",
             "Dragontooth Crater: מאורת דרקון באזור The Reach."
+          ],
+          "locations": [
+            "statue-to-meridia",
+            "shriekwind-bastion",
+            "dragontooth-crater"
           ],
           "notes": [
             "לא עובדת על נשקים מכושפים ולא על נשקים מזומנים.",
@@ -366,6 +396,11 @@
             "Ironbind Barrow באזור וינטרהולד.",
             "Lost Valley Redoubt באזור The Reach."
           ],
+          "locations": [
+            "ustengrav",
+            "ironbind-barrow",
+            "lost-valley-redoubt"
+          ],
           "notes": [],
           "wikiTitle": "Skyrim:Become Ethereal",
           "imageQuery": "Become Ethereal Skyrim"
@@ -381,6 +416,9 @@
           "why": "נשק דו-ידני לא מגיע לדרקון באוויר. עם השאגה הוא שלך.",
           "howToGet": [
             "מתקבלת בעלילה הראשית, במשימה Alduin's Bane על Throat of the World."
+          ],
+          "locations": [
+            "throat-of-the-world"
           ],
           "notes": [],
           "wikiTitle": "Skyrim:Dragonrend",
@@ -400,6 +438,11 @@
             "Forsaken Cave: מערבית לווינדהלם, בחלק הפנימי Forsaken Crypt.",
             "Autumnwatch Tower: דרומית לאייברסטד, שמור על ידי דרקון."
           ],
+          "locations": [
+            "dark-brotherhood-sanctuary",
+            "forsaken-cave",
+            "autumnwatch-tower"
+          ],
           "notes": [
             "באג ידוע: ללמוד את השאגה Drain Vitality לפני כל שלוש המילים כאן עלול לתקוע את השאגה."
           ],
@@ -418,6 +461,13 @@
           "howToGet": [
             "לקנות את ספר הלחש אצל Farengar בדרגונסריץ' (וייטראן).",
             "או אצל Calcelmo (מרקארת'), Falion (מורת'אל), Madena (וינדהלם), או Phinis Gestor בקולג' בוינטרהולד."
+          ],
+          "locations": [
+            "whiterun",
+            "markarth",
+            "morthal",
+            "windhelm",
+            "college-of-winterhold"
           ],
           "notes": [
             "צריך אבן נשמה ריקה בתיק.",
@@ -441,6 +491,10 @@
             "הספר על שולחן בסוף המכרה. במכרה יש גם 16 עורקי ברזל.",
             "מיקום נוסף: Ansilvund."
           ],
+          "locations": [
+            "halted-stream-camp",
+            "ansilvund"
+          ],
           "notes": [
             "לחש ברמת Adept באלטרציה. דורש מאנה, שמתחדשת לבד.",
             "הספר לא חוזר אם מוכרים אותו, אז לקרוא מיד."
@@ -460,6 +514,9 @@
           "howToGet": [
             "לקנות את ספר הלחש אצל Farengar בוייטראן או אצל מכשפים אחרים.",
             "או למצוא מגפיים עם הקסם Muffle, לפרק וללמוד."
+          ],
+          "locations": [
+            "whiterun"
           ],
           "notes": [
             "לחש ברמת Apprentice באילוזיה."
@@ -510,6 +567,12 @@
             "לחבוש את קמע מארה, למצוא את רוחות Ruki ו-Fenrig ב-Gjukar's Monument (דרום-מזרחית לרוריקסטד) ולאחד ביניהן.",
             "לחזור ל-Dinya Balu."
           ],
+          "locations": [
+            "riften",
+            "ivarstead",
+            "markarth",
+            "gjukars-monument"
+          ],
           "notes": [
             "שומרים את קמע מארה, וזה מאפשר גם להתחתן.",
             "אם יש לך כמה קמעות מארה, זה עלול לתקוע את המשימה."
@@ -530,6 +593,9 @@
             "להגיע למקדש דיבלה במרקארת'.",
             "להיכנס לחדר הפנימי של המקדש ולהשלים את המשימה The Heart of Dibella."
           ],
+          "locations": [
+            "markarth"
+          ],
           "notes": [
             "אחרי המשימה, Hamal במקדש מאמנת כישוף חפצים ברמת Master."
           ],
@@ -547,6 +613,9 @@
           "why": "מאיץ את הדרך לנפחות 100 ולציוד הדרקוני.",
           "howToGet": [
             "משימה בשם Unfathomable Depths, שמתחילה ברציפים של ריפטן (מרמה 14)."
+          ],
+          "locations": [
+            "riften"
           ],
           "notes": [
             "חלק נוסף של הבונוס (25% שריון עם שריון דוורי) ידוע כבאגי. החלק של הנפחות עובד גם בלי שריון דוורי."
@@ -568,6 +637,9 @@
             "למצוא את הספר השחור The Sallow Regent במקום White Ridge Barrow.",
             "לקרוא אותו, לעבור את העולם של Apocrypha, ובסוף לבחור ב-Seeker of Might."
           ],
+          "locations": [
+            "white-ridge-barrow"
+          ],
           "notes": [
             "הבחירה בסוף הספר סופית. שתי האפשרויות האחרות מיועדות להתגנבות ולקסם."
           ],
@@ -587,6 +659,9 @@
             "למצוא את Septimus Signus במחנה שלו צפונית לקולג' בוינטרהולד.",
             "להשלים את המשימה Discerning the Transmundane.",
             "לקרוא את הספר ולבחור ב-Path of Might."
+          ],
+          "locations": [
+            "septimus-signus-outpost"
           ],
           "notes": [
             "אי אפשר לעלות מעבר ל-100, אז לקרוא לפני שהכישורים קרובים לתקרה.",
@@ -609,6 +684,9 @@
             "לאסוף ארבעה רסיסים בהריסות דוורים שונות.",
             "בסוף, ב-Aetherium Forge שבתוך Ruins of Bthalft, לבחור לייצר את הכתר."
           ],
+          "locations": [
+            "ruins-of-bthalft"
+          ],
           "notes": [
             "חיסרון: הכתר תופס את מקום הקסדה.",
             "רמה מומלצת למשימה: 16.",
@@ -630,6 +708,9 @@
             "ב-Solstheim, במגדל Tel Mithryn של המכשף Neloth.",
             "לקרוא את הספר השחור The Hidden Twilight ולבחור בסוף ב-Mora's Boon."
           ],
+          "locations": [
+            "tel-mithryn"
+          ],
           "notes": [
             "זה כוח עם שימוש מוגבל, לא בונוס פסיבי."
           ],
@@ -649,6 +730,9 @@
             "ב-Solstheim, הספר השחור Epistolary Acumen בהריסות Nchardak (חלק מהעלילה של Dragonborn).",
             "לבחור בסוף ב-Dragonborn Force."
           ],
+          "locations": [
+            "nchardak"
+          ],
           "notes": [],
           "wikiTitle": "Skyrim:Black Book: Epistolary Acumen",
           "imageQuery": "Nchardak Skyrim"
@@ -666,6 +750,9 @@
             "להיכנס למגדלור Frostflow Lighthouse, על החוף בין דון-סטאר לוינטרהולד.",
             "לרדת למערה Frostflow Abyss ולהרוג את היצור הגדול בסוף (chaurus reaper). עליו: שרידי Habd ומפתח.",
             "לחזור לראש המגדלור, לפתוח את התיבה, לטפס לסולם ולהפעיל את מדורת המגדלור."
+          ],
+          "locations": [
+            "frostflow-lighthouse"
           ],
           "notes": [
             "המשימה לא אומרת לך לעשות את הצעד האחרון. רק היומן של Ramati במגדלור רומז על זה.",
@@ -686,6 +773,9 @@
           "howToGet": [
             "Guardian Stones: על הדרך ליד הכפר ריברווד."
           ],
+          "locations": [
+            "guardian-stones"
+          ],
           "notes": [
             "קשתות שייכת דווקא לאבן הגנב, לא לאבן הלוחם."
           ],
@@ -704,6 +794,9 @@
           "howToGet": [
             "מזרח ל-Morthal, על ההר ליד המקדש של Mehrunes Dagon. השביל מתחיל צפונית ל-Hall of the Vigilant."
           ],
+          "locations": [
+            "lord-stone"
+          ],
           "notes": [],
           "wikiTitle": "Skyrim:The Lord Stone",
           "imageQuery": "The Lord Stone Skyrim"
@@ -720,6 +813,9 @@
           "howToGet": [
             "באזור המעיינות החמים של Eastmarch, צפון-מערבית ל-Mistwatch."
           ],
+          "locations": [
+            "atronach-stone"
+          ],
           "notes": [],
           "wikiTitle": "Skyrim:The Atronach Stone",
           "imageQuery": "The Atronach Stone Skyrim"
@@ -735,6 +831,9 @@
           "why": "פותרת את בעיית ההליכה האיטית בשריון כבד, עד שתגיע לפרק Conditioning.",
           "howToGet": [
             "צפון-מערבית לסוליטיוד, ליד Ironback Hideout, צפונית לפסל של מרידיה."
+          ],
+          "locations": [
+            "steed-stone"
           ],
           "notes": [],
           "wikiTitle": "Skyrim:The Steed Stone",
@@ -979,6 +1078,9 @@
           "howToGet": [
             "מתקבלת אחרי הדרקון הראשון, בעלילה הראשית."
           ],
+          "locations": [
+            "whiterun"
+          ],
           "notes": [
             "לתת לה נשק חד-ידני טוב ומגן, לא נשק דו-ידני.",
             "היא לובשת אוטומטית את השריון עם ערך ההגנה הכי גבוה מכל מה שנתת לה.",
@@ -1001,6 +1103,10 @@
             "להביא את החרב שלה Grimsever מהריסות הדוורים Mzinchaleft (המשימה Grimsever's Return).",
             "החרב מופיעה רק מרמה 14."
           ],
+          "locations": [
+            "riften",
+            "mzinchaleft"
+          ],
           "notes": [],
           "wikiTitle": "Skyrim:Mjoll the Lioness",
           "imageQuery": "Mjoll the Lioness Skyrim"
@@ -1016,6 +1122,9 @@
           "why": "מקום בטוח לאחסן חומרים, כמו עצמות וקשקשי דרקון, ומיטה משלך.",
           "howToGet": [
             "לקנות דרך הסטיוארד של הג'ארל בדרגונסריץ' בוייטראן."
+          ],
+          "locations": [
+            "whiterun"
           ],
           "notes": [],
           "wikiTitle": "Skyrim:Breezehome",
@@ -1040,6 +1149,14 @@
             "Blood's Honor: Kodlak שולח אותך ל-Glenmoril Coven ליד פולקריית' להביא ראש של מכשפה. כשחוזרים, Jorrvaskr הותקף ו-Kodlak נהרג.",
             "Purity of Revenge: עם Vilkas למבצר Driftshade Refuge של ה-Silver Hand, להביא את שאר השברים של Wuuthrad ולחסל את ה-Silver Hand.",
             "Glory of the Dead: Eorlund מחבר את Wuuthrad ב-Skyforge, ומשם ל-Ysgramor's Tomb בצפון-מערב Winterhold. בסוף מרפאים את הנשמה של Kodlak ונהיים ה-Harbinger."
+          ],
+          "locations": [
+            "whiterun",
+            "dustmans-cairn",
+            "gallows-rock",
+            "glenmoril-coven",
+            "driftshade-refuge",
+            "ysgramors-tomb"
           ],
           "notes": [
             "אפשר להתאמן עד 5 פעמים בכל רמת דמות. Master מאמן עד 90, Expert עד 75.",
@@ -1068,6 +1185,10 @@
             "להחזיר לאזורה: מקבלים את Azura's Star, שמכילה רק נשמות של חיות ויצורים.",
             "לתת ל-Nelacar בוינטרהולד: מקבלים את The Black Star, שמכילה כל נשמה, כולל בני אדם ואלפים (תמיד בדרגה הגבוהה)."
           ],
+          "locations": [
+            "shrine-of-azura",
+            "winterhold"
+          ],
           "notes": [
             "צריך את Soul Trap כדי למלא אותה."
           ],
@@ -1091,6 +1212,10 @@
             "לצוד את הצבי הלבן (White Stag) בקרחת יער מזרחית לפולקריית', בדרך כלל ליד בריכה קטנה. הוא בורח במעלה הגבעה, אז כדאי נשק טווח או לרדוף אחריו. כשהוא מת מופיע Hircine ושולח אותך לצוד את Sinding.",
             "ללכת ל-Bloated Man's Grotto, מערה בין פולקריית' לוייטראן. כל הציידים שם מתים חוץ מ-J'Kier, שמת אחרי שהוא מדבר איתך.",
             "Sinding מופיע על סלע מעל ומבקש שתחוס עליו. כאן בוחרים צד."
+          ],
+          "locations": [
+            "falkreath",
+            "bloated-mans-grotto"
           ],
           "notes": [
             "להרוג את Sinding: הציידים תוקפים אותו, ואחר כך הוא תוקף אותך. אחרי שהורגים אותו, פושטים את העור שלו ומקבלים את Savior's Hide.",
@@ -1119,6 +1244,11 @@
             "Torbjorn Shatter-Shield בוינדהלם: דו-ידני ברמת Expert. גר בבית של משפחת Shatter-Shield ברובע Valunstrad.",
             "Balimund בריפטן: נפחות ברמת Expert. הנפח של The Scorched Hammer.",
             "Hamal במרקארת': כישוף חפצים ברמת Master, במקדש של Dibella. מאמנת רק אחרי המשימה The Heart of Dibella."
+          ],
+          "locations": [
+            "windhelm",
+            "riften",
+            "markarth"
           ],
           "notes": [
             "כל המאמנים חולקים את אותה מגבלה: עד 5 אימונים בכל רמת דמות, בלי קשר למאמן."

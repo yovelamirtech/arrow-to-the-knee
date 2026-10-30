@@ -5,6 +5,11 @@
   const TAB_ARCHIVE = 'archive';
   const TAB_TIPS = 'tips';
   const TOAST_MS = 5000;
+  // Smallest part of the map (as a fraction of its width) the zoomed map view shows.
+  const MAP_MIN_VIEW = 0.32;
+  const MAP_VIEW_PAD = 0.1;
+  // Part of the map width shown in a place card that has no screenshot.
+  const CARD_MAP_VIEW = 0.14;
 
   const PRIORITY = {
     high: { label: 'עדיפות גבוהה', rank: 0 },
@@ -38,6 +43,8 @@
 
   let builds = [];
   let images = {};
+  let world = { maps: {}, locations: {} };
+  let locationImages = {};
   let store = { activeBuild: null, builds: {} };
   let query = '';
   let sheetItemId = null;
@@ -159,6 +166,40 @@
   function imageFor(build, item) {
     const entry = images[build.id] && images[build.id][item.id];
     return entry && entry.file ? entry : null;
+  }
+
+  // The item's locations that exist in data/locations.json, numbered in item order.
+  function placesFor(item) {
+    const ids = Array.isArray(item.locations) ? item.locations : [];
+    return ids
+      .map((id) => ({ id, loc: world.locations[id] }))
+      .filter((p) => p.loc && world.maps[p.loc.map])
+      .map((p, i) => ({ ...p, num: i + 1 }));
+  }
+
+  // Game coordinates -> fractions of the map image (0..1 from its top-left corner).
+  function mapPoint(map, loc) {
+    const b = map.bounds;
+    return {
+      fx: (loc.x - b.left) / (b.right - b.left),
+      fy: (b.top - loc.y) / (b.top - b.bottom),
+    };
+  }
+
+  // A square (in map fractions) around the points, so the frame keeps the map's aspect ratio.
+  function zoomView(points) {
+    const xs = points.map((p) => p.fx);
+    const ys = points.map((p) => p.fy);
+    const minX = Math.min(...xs), maxX = Math.max(...xs);
+    const minY = Math.min(...ys), maxY = Math.max(...ys);
+    const size = Math.min(1, Math.max(MAP_MIN_VIEW, maxX - minX + MAP_VIEW_PAD * 2, maxY - minY + MAP_VIEW_PAD * 2));
+    const clamp = (v) => Math.min(1 - size, Math.max(0, v));
+    return { x: clamp((minX + maxX - size) / 2), y: clamp((minY + maxY - size) / 2), size };
+  }
+
+  function gamemapUrl(map, loc) {
+    const params = new URLSearchParams({ world: map.gamemapWorld, x: loc.x, y: loc.y, zoom: 5 });
+    return 'https://gamemap.uesp.net/sr/?' + params;
   }
 
   /* ---------- Rendering ---------- */
@@ -440,6 +481,76 @@
 
   /* ---------- Details sheet ---------- */
 
+  function placesHtml(item) {
+    const places = placesFor(item);
+    if (!places.length) return '';
+    const numbered = places.length > 1;
+    const mapIds = [...new Set(places.map((p) => p.loc.map))];
+    return `<section class="sheet-section"><h3>על המפה</h3>
+      ${mapIds.map((m) => worldMapHtml(m, places.filter((p) => p.loc.map === m), numbered)).join('')}
+      <ul class="places${numbered ? '' : ' places-single'}">${places.map((p) => placeHtml(p, numbered)).join('')}</ul>
+    </section>`;
+  }
+
+  function worldMapHtml(mapId, places, numbered) {
+    const map = world.maps[mapId];
+    const points = places.map((p) => ({ ...p, ...mapPoint(map, p.loc) }));
+    const view = zoomView(points);
+    const pins = points
+      .map((p) => `<span class="map-pin" style="left:${(p.fx * 100).toFixed(2)}%;top:${(p.fy * 100).toFixed(2)}%">${numbered ? p.num : ''}</span>`)
+      .join('');
+    const label = `מיקום על מפת ${map.nameHe}: ${places.map((p) => p.loc.nameHe || p.loc.nameEn).join(', ')}`;
+    return `<figure class="world-map">
+      <div class="world-map-frame" style="aspect-ratio:${map.width}/${map.height};--vx:${view.x.toFixed(4)};--vy:${view.y.toFixed(4)};--vs:${view.size.toFixed(4)}" role="img" aria-label="${escapeHtml(label)}">
+        <div class="world-map-layer"><img src="${escapeHtml(map.file)}" alt="" width="${map.width}" height="${map.height}" decoding="async">${pins}</div>
+      </div>
+      <figcaption class="map-caption">
+        <span class="map-credit">מפה: <a href="https://gamemap.uesp.net/sr/" target="_blank" rel="noopener noreferrer"><bdi>UESP</bdi></a></span>
+        ${view.size < 1 ? '<button type="button" class="map-zoom" data-action="map-zoom" aria-pressed="false">כל המפה</button>' : ''}
+      </figcaption>
+    </figure>`;
+  }
+
+  // A close crop of the world map centred on the place, for places without a screenshot.
+  function cardMapHtml(map, loc) {
+    const { fx, fy } = mapPoint(map, loc);
+    const layerH = (16 / 9) * (map.height / map.width) * (100 / CARD_MAP_VIEW);
+    const style = [
+      `width:${(100 / CARD_MAP_VIEW).toFixed(2)}%`,
+      `height:${layerH.toFixed(2)}%`,
+      `left:${(50 - (fx * 100) / CARD_MAP_VIEW).toFixed(2)}%`,
+      `top:${(50 - fy * layerH).toFixed(2)}%`,
+    ].join(';');
+    return `<span class="place-shot place-map" aria-hidden="true"><span class="place-map-layer" style="${style}"><img src="${escapeHtml(map.file)}" alt="" decoding="async"></span><span class="map-pin"></span></span>`;
+  }
+
+  function placeHtml(place, numbered) {
+    const { loc } = place;
+    const map = world.maps[loc.map];
+    const shot = locationImages[place.id];
+    const name = loc.nameHe
+      ? `<span class="place-name">${richText(loc.nameHe)}</span><span class="name-en" dir="ltr">${escapeHtml(loc.nameEn)}</span>`
+      : `<span class="place-name" dir="ltr">${escapeHtml(loc.nameEn)}</span>`;
+    const img = shot && shot.file
+      ? `<a class="place-shot" href="${escapeHtml(shot.source || shot.file)}" target="_blank" rel="noopener noreferrer"><img src="${escapeHtml(shot.file)}" alt="${escapeHtml(`${loc.nameEn} על מפת המשחק`)}" loading="lazy" decoding="async"></a>`
+      : cardMapHtml(map, loc);
+    return `<li class="place">
+      ${img}
+      <div class="place-body">
+        ${numbered ? `<span class="place-num">${place.num}</span>` : ''}
+        <span class="place-text">${name}</span>
+        <a class="place-link" href="${escapeHtml(gamemapUrl(map, loc))}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(`${loc.nameEn} במפה האינטראקטיבית של UESP`)}" title="במפה האינטראקטיבית">${ICON_EXTERNAL}</a>
+      </div>
+    </li>`;
+  }
+
+  function toggleMapZoom(btn) {
+    const fig = btn.closest('.world-map');
+    const full = fig.classList.toggle('is-full');
+    btn.setAttribute('aria-pressed', String(full));
+    btn.textContent = full ? 'התקרבות' : 'כל המפה';
+  }
+
   function detailsHtml(build, item) {
     const done = isDone(build, item.id);
     const img = imageFor(build, item);
@@ -466,6 +577,7 @@
         <section class="sheet-section"><h3>מה זה</h3><p>${richText(item.summary)}</p></section>
         <section class="sheet-section"><h3>למה זה טוב לבילד</h3><p>${richText(item.why)}</p></section>
         ${howTo.length ? `<section class="sheet-section"><h3>איך משיגים</h3><ol>${howTo.map((s) => `<li>${richText(s)}</li>`).join('')}</ol></section>` : ''}
+        ${placesHtml(item)}
         ${notes.length ? `<section class="sheet-section"><h3>הערות</h3><ul>${notes.map((s) => `<li>${richText(s)}</li>`).join('')}</ul></section>` : ''}
         ${item.wikiTitle ? `<a class="wiki-link" href="${escapeHtml(wikiUrl(item.wikiTitle))}" target="_blank" rel="noopener noreferrer">לקריאה נוספת ב-<bdi>UESP</bdi>${ICON_EXTERNAL}</a>` : ''}
       </div>
@@ -544,6 +656,7 @@
     const btn = e.target.closest('[data-action]');
     if (!btn) return;
     if (btn.dataset.action === 'close') requestCloseSheet();
+    else if (btn.dataset.action === 'map-zoom') toggleMapZoom(btn);
     else if (btn.dataset.action === 'toggle' && sheetItemId) {
       const id = sheetItemId;
       afterSheetClose = () => toggleItem(id);
@@ -612,12 +725,17 @@
     if (fn) fn();
   });
 
-  // Broken image files fall back to the category emoji tile.
+  // Broken image files fall back to the category emoji tile; a broken map screenshot is dropped.
   document.addEventListener(
     'error',
     (e) => {
       const img = e.target;
       if (!(img instanceof HTMLImageElement)) return;
+      const shot = img.closest('.place-shot');
+      if (shot) {
+        shot.remove();
+        return;
+      }
       const tile = img.closest('.thumb');
       if (!tile) return;
       tile.innerHTML = `<span class="thumb-emoji" aria-hidden="true">${escapeHtml(tile.dataset.emoji || '•')}</span>`;
@@ -648,11 +766,13 @@
       el.list.innerHTML = '<p class="empty">לא הצלחתי לטעון את הנתונים. נסה לרענן את הדף.</p>';
       return;
     }
-    try {
-      images = await fetchJson('data/images.json');
-    } catch (e) {
-      images = {};
-    }
+    // Images and maps are optional: without them the sheet just skips those parts.
+    const [imgs, locs, shots] = await Promise.all(
+      ['data/images.json', 'data/locations.json', 'data/location-images.json'].map((url) => fetchJson(url).catch(() => null))
+    );
+    images = imgs || {};
+    world = { maps: (locs && locs.maps) || {}, locations: (locs && locs.locations) || {} };
+    locationImages = shots || {};
     if (!builds.length) {
       el.list.innerHTML = '<p class="empty">אין בילדים בקובץ הנתונים.</p>';
       return;

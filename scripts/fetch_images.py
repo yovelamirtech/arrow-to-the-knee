@@ -20,9 +20,18 @@ Manual overrides live in scripts/image_overrides.json:
 Thumbnails are requested at 256px from the wiki APIs, so no local resizing
 is needed. Python standard library only.
 
+The script also downloads an in-game map screenshot for every location in
+data/locations.json that an item uses. They come from the location's Fandom
+page (the page image whose name mentions "map"), are saved to
+assets/img/locations/<locationId>.<ext> at 640px and listed in
+data/location-images.json. Per-location overrides go in data/locations.json:
+  "fandomPage": "Page"     look for the screenshot on this Fandom page
+  "fandomFile": "File:X"   use this Fandom file
+  "noScreenshot": true     never fetch, show only the pin on the map
+
 Usage:
   python3 scripts/fetch_images.py            # fetch missing images
-  python3 scripts/fetch_images.py --force ID # re-fetch one item (any build)
+  python3 scripts/fetch_images.py --force ID # re-fetch one item or location (any build)
   python3 scripts/fetch_images.py --dry-run  # show what would be fetched
 """
 
@@ -40,13 +49,17 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ITEMS_PATH = os.path.join(ROOT, "data", "items.json")
 IMAGES_PATH = os.path.join(ROOT, "data", "images.json")
 OVERRIDES_PATH = os.path.join(ROOT, "scripts", "image_overrides.json")
+LOCATIONS_PATH = os.path.join(ROOT, "data", "locations.json")
+LOCATION_IMAGES_PATH = os.path.join(ROOT, "data", "location-images.json")
 IMG_DIR = os.path.join(ROOT, "assets", "img")
+LOCATION_IMG_DIR = os.path.join(IMG_DIR, "locations")
 
 FANDOM_API = "https://elderscrolls.fandom.com/api.php"
 FANDOM_WIKI = "https://elderscrolls.fandom.com/wiki/"
 UESP_API = "https://en.uesp.net/w/api.php"
 UESP_WIKI = "https://en.uesp.net/wiki/"
 THUMB = 256
+SCREENSHOT = 640
 USER_AGENT = "arrow-to-the-knee/1.0 (personal Skyrim checklist; image fetcher)"
 EXT_BY_TYPE = {
     "image/png": "png",
@@ -138,8 +151,8 @@ def uesp_page_image(title):
     return None
 
 
-def file_thumb(base, wiki, file_title):
-    data = api(base, action="query", titles=file_title, prop="imageinfo", iiprop="url", iiurlwidth=THUMB)
+def file_thumb(base, wiki, file_title, width=THUMB):
+    data = api(base, action="query", titles=file_title, prop="imageinfo", iiprop="url", iiurlwidth=width)
     for p in (data.get("query") or {}).get("pages") or []:
         info = (p.get("imageinfo") or [None])[0]
         if info:
@@ -163,8 +176,42 @@ def find_image(item, override):
     return fandom_first(item)
 
 
-def existing_file(build_id, item_id):
-    folder = os.path.join(IMG_DIR, build_id)
+def map_file_score(file_title, loc_name):
+    """How likely a Fandom file is the world-map screenshot of this location."""
+    t = file_title.lower()
+    if "map" not in t:
+        return None
+    # Interior maps and maps from the other games share the location names.
+    if re.search(r"local|interior|online|\beso\b|oblivion|morrowind|treasure", t):
+        return None
+    score = 0
+    if "world map" in t or "map location" in t or "maplocation" in t:
+        score += 2
+    if norm(loc_name) and norm(loc_name) in norm(file_title):
+        score += 1
+    return score
+
+
+def find_screenshot(loc):
+    if loc.get("fandomFile"):
+        return file_thumb(FANDOM_API, FANDOM_WIKI, loc["fandomFile"], SCREENSHOT)
+    # Many places share a name with other games, so the Skyrim page has a suffix.
+    titles = [loc["fandomPage"]] if loc.get("fandomPage") else [loc["nameEn"], loc["nameEn"] + " (Skyrim)"]
+    for title in titles:
+        data = api(FANDOM_API, action="query", titles=title, redirects=1, prop="images", imlimit=100)
+        files = []
+        for p in (data.get("query") or {}).get("pages") or []:
+            files += [i["title"] for i in p.get("images") or []]
+        scored = [(map_file_score(f, loc["nameEn"]), f) for f in files]
+        scored = [(s, f) for s, f in scored if s is not None]
+        if scored:
+            best = max(scored, key=lambda x: x[0])[1]
+            return file_thumb(FANDOM_API, FANDOM_WIKI, best, SCREENSHOT)
+    return None
+
+
+def existing_file(build_id, item_id, img_dir=IMG_DIR):
+    folder = os.path.join(img_dir, build_id) if build_id else img_dir
     if not os.path.isdir(folder):
         return None
     for name in os.listdir(folder):
@@ -173,9 +220,78 @@ def existing_file(build_id, item_id):
     return None
 
 
+def download(thumb_url):
+    """Return (body, ext), or (None, content type) when it is not an image."""
+    body, ctype = http_get(thumb_url, accept="image/png,image/jpeg,image/*;q=0.8")
+    ext = EXT_BY_TYPE.get(ctype.split(";")[0].strip().lower())
+    return (body, ext) if ext else (None, ctype)
+
+
+def fetch_screenshots(data, forced, dry_run):
+    """Map screenshots for every location used by an item. Returns names without one."""
+    locations = load_json(LOCATIONS_PATH, {}).get("locations", {})
+    shots = load_json(LOCATION_IMAGES_PATH, {})
+    used = []
+    for build in data.get("builds", []):
+        for item in build.get("items", []):
+            for lid in item.get("locations") or []:
+                if lid not in locations:
+                    print(f"  ! {build['id']}/{item['id']}: unknown location {lid!r}")
+                elif lid not in used:
+                    used.append(lid)
+
+    fetched, missing = 0, []
+    for lid in used:
+        loc = locations[lid]
+        current = existing_file(None, lid, LOCATION_IMG_DIR)
+        if loc.get("noScreenshot"):
+            if shots.pop(lid, None) is not None and current and not dry_run:
+                os.remove(os.path.join(LOCATION_IMG_DIR, current))
+            continue
+        if current and lid not in forced:
+            shots.setdefault(lid, {"file": f"assets/img/locations/{current}", "source": ""})
+            continue
+        try:
+            found = find_screenshot(loc)
+        except Exception as e:  # network or API error: try again next run
+            print(f"  ! location {lid}: {e}")
+            missing.append(f"{lid} (error)")
+            continue
+        if not found:
+            print(f"  - location {lid}: no map screenshot found")
+            missing.append(lid)
+            continue
+        thumb_url, source, _ = found
+        print(f"  + location {lid} {thumb_url}")
+        if dry_run:
+            continue
+        body, ext = download(thumb_url)
+        if body is None:
+            print(f"  ! location {lid}: unexpected content type {ext!r}")
+            missing.append(f"{lid} (bad type)")
+            continue
+        os.makedirs(LOCATION_IMG_DIR, exist_ok=True)
+        if current:
+            os.remove(os.path.join(LOCATION_IMG_DIR, current))
+        filename = f"{lid}.{ext}"
+        with open(os.path.join(LOCATION_IMG_DIR, filename), "wb") as f:
+            f.write(body)
+        shots[lid] = {"file": f"assets/img/locations/{filename}", "source": source}
+        fetched += 1
+
+    # Drop entries for locations no item uses any more.
+    for lid in list(shots):
+        if lid not in used:
+            del shots[lid]
+    if not dry_run:
+        save_json(LOCATION_IMAGES_PATH, dict(sorted(shots.items())))
+    print(f"\nmap screenshots: fetched {fetched}, without screenshot {len(missing)}")
+    return missing
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--force", action="append", default=[], metavar="ITEM_ID", help="re-fetch this item")
+    parser.add_argument("--force", action="append", default=[], metavar="ID", help="re-fetch this item or location")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -225,10 +341,9 @@ def main():
             print(f"  + {bid}/{iid} [{kind}] {thumb_url}")
             if args.dry_run:
                 continue
-            body, ctype = http_get(thumb_url, accept="image/png,image/jpeg,image/*;q=0.8")
-            ext = EXT_BY_TYPE.get(ctype.split(";")[0].strip().lower())
-            if not ext:
-                print(f"  ! {bid}/{iid}: unexpected content type {ctype!r}")
+            body, ext = download(thumb_url)
+            if body is None:
+                print(f"  ! {bid}/{iid}: unexpected content type {ext!r}")
                 missing.append(f"{bid}/{iid} (bad type)")
                 continue
             os.makedirs(os.path.join(IMG_DIR, bid), exist_ok=True)
@@ -251,6 +366,9 @@ def main():
     print(f"\nfetched {len(fetched)}, already had {skipped}, without image {len(missing)}")
     for m in missing:
         print(f"  no image: {m}")
+
+    for m in fetch_screenshots(data, set(args.force), args.dry_run):
+        print(f"  no map screenshot: {m}")
 
 
 if __name__ == "__main__":

@@ -21,7 +21,11 @@ styles.css            עיצוב
 app.js                הלוגיקה
 data/items.json       כל התוכן: בילדים, קטגוריות, פריטים וטיפים
 data/images.json      איזו תמונה שייכת לאיזה פריט (נוצר על ידי הסקריפט)
+data/locations.json   המפות וכל המיקומים, עם קואורדינטות מהמשחק
+data/location-images.json  צילום מסך של המפה לכל מיקום (נוצר על ידי הסקריפט)
 assets/img/<build>/   התמונות עצמן
+assets/img/locations/ צילומי המסך של המיקומים
+assets/maps/          מפות העולם (סקיירים וסולסטהיים)
 scripts/fetch_images.py      מוריד תמונות לפריטים שאין להם תמונה
 scripts/image_overrides.json תיקונים ידניים לתמונות (קובץ מסוים, או בלי תמונה)
 ```
@@ -59,6 +63,7 @@ python3 -m http.server 8000
 | `summary` | שורה אחת: מה זה |
 | `why` | למה זה טוב לבילד |
 | `howToGet` | מערך של צעדים (מוצג כרשימה ממוספרת) |
+| `locations` | לא חובה. מערך של מזהי מיקומים מ-`data/locations.json`, לפי הסדר שבו הם מוזכרים. מוצגים כנעצים ממוספרים על המפה. |
 | `notes` | מערך של הערות (יכול להיות ריק) |
 | `wikiTitle` | שם הדף ב-UESP, למשל `Skyrim:The Longhammer` |
 | `imageQuery` | מילות חיפוש לתמונה בוויקי |
@@ -76,9 +81,12 @@ Add a new build to data/items.json for <הקלאס> in Skyrim Special Edition (n
 Give it a unique English id, nameHe and nameEn, categories, items and tips,
 all in Hebrew, in exactly the same schema and style as the existing build
 (see README.md for the schema). Keep the existing build untouched.
-Then run `python3 scripts/fetch_images.py`, look at every new image yourself and
-remove or override (scripts/image_overrides.json) any image that does not show the
-item, check the site locally, then commit and push.
+Give every item that is found at a real place a `locations` list, reusing ids
+from data/locations.json and adding new locations there (see "מיקומים ומפות").
+Then run `python3 scripts/fetch_images.py`, look at every new image and map
+screenshot yourself and remove or override (scripts/image_overrides.json,
+data/locations.json) any that does not show the item or place, check the site
+locally, then commit and push.
 ```
 
 **להוספת פריט בודד לבילד קיים:** מוסיפים אובייקט חדש למערך `items` של הבילד עם `id` חדש, מריצים `python3 scripts/fetch_images.py`, בודקים את התמונה ועושים commit ו-push.
@@ -96,8 +104,27 @@ item, check the site locally, then commit and push.
 
 ומריצים שוב עם `--force <itemId>`.
 
+## מיקומים ומפות
+
+לפריט עם `locations` יש בחלון הפרטים קטע "על המפה": מפת העולם עם נעץ לכל מיקום (מוגדלת סביב הנעצים, עם כפתור "כל המפה"), ומתחתיה כרטיס לכל מיקום עם צילום מסך של מפת המשחק וקישור למפה האינטראקטיבית של UESP. מיקום בלי צילום מסך מקבל בכרטיס חיתוך קרוב של מפת העולם.
+
+`data/locations.json` מכיל שני חלקים:
+
+- `maps`: המפות. לכל מפה קובץ, גודל בפיקסלים, ו-`bounds`, הקואורדינטות של המשחק בקצוות התמונה. המפות נתפרו מהאריחים של [UESP Gamemap](https://gamemap.uesp.net/sr/), ולכן הן תואמות בדיוק לקואורדינטות. אם מחליפים קובץ מפה, צריך לעדכן גם את `bounds`.
+- `locations`: המיקומים, לפי מזהה באנגלית. לכל מיקום `nameEn`, `nameHe` (לא חובה, בעיקר לערים), `map` (`skyrim` או `solstheim`), ו-`x` ו-`y` בקואורדינטות של המשחק.
+
+**איך מוצאים קואורדינטות למיקום חדש:** פותחים את [UESP Gamemap](https://gamemap.uesp.net/sr/), מחפשים את המקום ומרכזים עליו את המפה. כתובת הדף מתעדכנת עם `x=` ו-`y=` של מרכז המפה, ואת המספרים האלה מעתיקים.
+
+צילומי המסך מגיעים מדף המקום ב-Elder Scrolls Wiki, דרך `scripts/fetch_images.py`. אם הוא הביא תמונה לא נכונה (מפה פנימית, מפה ממשחק אחר), מוסיפים למיקום ב-`data/locations.json` את אחד מאלה ומריצים שוב עם `--force <locationId>`:
+
+```json
+"fandomFile": "File:Something Map.png"
+"fandomPage": "Other page"
+"noScreenshot": true
+```
+
 ## קרדיטים
 
-התמונות והמידע מתוך [UESP](https://en.uesp.net/) ומתוך [The Elder Scrolls Wiki](https://elderscrolls.fandom.com/) (Fandom), ברישיון CC BY-SA. המשחק The Elder Scrolls V: Skyrim הוא © Bethesda.
+התמונות והמידע מתוך [UESP](https://en.uesp.net/) ומתוך [The Elder Scrolls Wiki](https://elderscrolls.fandom.com/) (Fandom), ברישיון CC BY-SA. מפות העולם מתוך [UESP Gamemap](https://gamemap.uesp.net/sr/). המשחק The Elder Scrolls V: Skyrim הוא © Bethesda.
 
 המסמך המקורי שממנו נבנה האתר: [`arrow-to-the-knee-prompt.md`](arrow-to-the-knee-prompt.md).

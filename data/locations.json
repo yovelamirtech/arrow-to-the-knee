@@ -1,0 +1,359 @@
+{
+  "maps": {
+    "skyrim": {
+      "nameHe": "סקיירים",
+      "file": "assets/maps/skyrim.webp",
+      "width": 2000,
+      "height": 1477,
+      "bounds": {
+        "left": -223354,
+        "top": 162766,
+        "right": 217228,
+        "bottom": -162733
+      },
+      "gamemapWorld": "skyrim"
+    },
+    "solstheim": {
+      "nameHe": "סולסטהיים",
+      "file": "assets/maps/solstheim.webp",
+      "width": 1350,
+      "height": 1550,
+      "bounds": {
+        "left": 8451,
+        "top": 104604,
+        "right": 94853,
+        "bottom": 5420
+      },
+      "gamemapWorld": "solstheim"
+    }
+  },
+  "locations": {
+    "liars-retreat": {
+      "nameEn": "Liar's Retreat",
+      "map": "skyrim",
+      "x": -113431,
+      "y": 50797
+    },
+    "largashbur": {
+      "nameEn": "Largashbur",
+      "map": "skyrim",
+      "x": 135308,
+      "y": -110597
+    },
+    "frofnir-troll-lair": {
+      "nameEn": "Frofnir's troll lair",
+      "nameHe": "מאורת הטרולים של Frofnir",
+      "map": "skyrim",
+      "x": -107349,
+      "y": -32538,
+      "fandomFile": "File:Skyrim location trollsbane.jpg"
+    },
+    "sacellum-of-boethiah": {
+      "nameEn": "Sacellum of Boethiah",
+      "map": "skyrim",
+      "x": 161866,
+      "y": 26718,
+      "fandomFile": "File:SacellumOfBoethiah(Location).jpg"
+    },
+    "folgunthur": {
+      "nameEn": "Folgunthur",
+      "map": "skyrim",
+      "x": -47867,
+      "y": 91437
+    },
+    "saarthal": {
+      "nameEn": "Saarthal",
+      "map": "skyrim",
+      "x": 92005,
+      "y": 91812
+    },
+    "geirmunds-hall": {
+      "nameEn": "Geirmund's Hall",
+      "map": "skyrim",
+      "x": 89473,
+      "y": -64541
+    },
+    "reachwater-rock": {
+      "nameEn": "Reachwater Rock",
+      "map": "skyrim",
+      "x": -140948,
+      "y": -3609
+    },
+    "bleak-falls-barrow": {
+      "nameEn": "Bleak Falls Barrow",
+      "map": "skyrim",
+      "x": 1482,
+      "y": -41162,
+      "fandomFile": "File:Bleak Falls Barrow MapLocation.png"
+    },
+    "high-hrothgar": {
+      "nameEn": "High Hrothgar",
+      "map": "skyrim",
+      "x": 52071,
+      "y": -36267
+    },
+    "throat-of-the-world": {
+      "nameEn": "Throat of the World",
+      "map": "skyrim",
+      "x": 56368,
+      "y": -48511
+    },
+    "statue-to-meridia": {
+      "nameEn": "Statue to Meridia",
+      "map": "skyrim",
+      "x": -94076,
+      "y": 99077
+    },
+    "shriekwind-bastion": {
+      "nameEn": "Shriekwind Bastion",
+      "map": "skyrim",
+      "x": -24357,
+      "y": -77669,
+      "noScreenshot": true
+    },
+    "dragontooth-crater": {
+      "nameEn": "Dragontooth Crater",
+      "map": "skyrim",
+      "x": -141732,
+      "y": 50230
+    },
+    "ustengrav": {
+      "nameEn": "Ustengrav",
+      "map": "skyrim",
+      "x": -23080,
+      "y": 88177
+    },
+    "ironbind-barrow": {
+      "nameEn": "Ironbind Barrow",
+      "map": "skyrim",
+      "x": 70653,
+      "y": 57153,
+      "noScreenshot": true
+    },
+    "lost-valley-redoubt": {
+      "nameEn": "Lost Valley Redoubt",
+      "map": "skyrim",
+      "x": -89950,
+      "y": -36677,
+      "noScreenshot": true
+    },
+    "dark-brotherhood-sanctuary": {
+      "nameEn": "Dark Brotherhood Sanctuary",
+      "map": "skyrim",
+      "x": -41600,
+      "y": -83776,
+      "noScreenshot": true
+    },
+    "forsaken-cave": {
+      "nameEn": "Forsaken Cave",
+      "map": "skyrim",
+      "x": 87223,
+      "y": 50364
+    },
+    "autumnwatch-tower": {
+      "nameEn": "Autumnwatch Tower",
+      "map": "skyrim",
+      "x": 84059,
+      "y": -99526
+    },
+    "whiterun": {
+      "nameEn": "Whiterun",
+      "nameHe": "וייטראן",
+      "map": "skyrim",
+      "x": 19855,
+      "y": -7423,
+      "noScreenshot": true
+    },
+    "markarth": {
+      "nameEn": "Markarth",
+      "nameHe": "מרקארת'",
+      "map": "skyrim",
+      "x": -174024,
+      "y": 5255
+    },
+    "morthal": {
+      "nameEn": "Morthal",
+      "nameHe": "מורת'אל",
+      "map": "skyrim",
+      "x": -38640,
+      "y": 66734,
+      "noScreenshot": true
+    },
+    "windhelm": {
+      "nameEn": "Windhelm",
+      "nameHe": "וינדהלם",
+      "map": "skyrim",
+      "x": 135026,
+      "y": 35597,
+      "noScreenshot": true
+    },
+    "winterhold": {
+      "nameEn": "Winterhold",
+      "nameHe": "וינטרהולד",
+      "map": "skyrim",
+      "x": 109208,
+      "y": 102864,
+      "noScreenshot": true
+    },
+    "college-of-winterhold": {
+      "nameEn": "College of Winterhold",
+      "nameHe": "הקולג' של וינטרהולד",
+      "map": "skyrim",
+      "x": 116259,
+      "y": 111530
+    },
+    "riften": {
+      "nameEn": "Riften",
+      "nameHe": "ריפטן",
+      "map": "skyrim",
+      "x": 173415,
+      "y": -96600,
+      "fandomFile": "File:Riften(Location).jpg"
+    },
+    "falkreath": {
+      "nameEn": "Falkreath",
+      "nameHe": "פולקריית'",
+      "map": "skyrim",
+      "x": -30296,
+      "y": -86284
+    },
+    "ivarstead": {
+      "nameEn": "Ivarstead",
+      "nameHe": "אייברסטד",
+      "map": "skyrim",
+      "x": 76375,
+      "y": -64263
+    },
+    "halted-stream-camp": {
+      "nameEn": "Halted Stream Camp",
+      "map": "skyrim",
+      "x": 16500,
+      "y": 18919
+    },
+    "ansilvund": {
+      "nameEn": "Ansilvund",
+      "map": "skyrim",
+      "x": 174572,
+      "y": -35183,
+      "fandomFile": "File:Ansilvund Map2.jpg"
+    },
+    "gjukars-monument": {
+      "nameEn": "Gjukar's Monument",
+      "map": "skyrim",
+      "x": -62276,
+      "y": -9459
+    },
+    "septimus-signus-outpost": {
+      "nameEn": "Septimus Signus's Outpost",
+      "map": "skyrim",
+      "x": 115341,
+      "y": 141084
+    },
+    "ruins-of-bthalft": {
+      "nameEn": "Ruins of Bthalft",
+      "map": "skyrim",
+      "x": 87427,
+      "y": -86992
+    },
+    "frostflow-lighthouse": {
+      "nameEn": "Frostflow Lighthouse",
+      "map": "skyrim",
+      "x": 64340,
+      "y": 88971
+    },
+    "guardian-stones": {
+      "nameEn": "The Guardian Stones",
+      "map": "skyrim",
+      "x": 2807,
+      "y": -59216
+    },
+    "lord-stone": {
+      "nameEn": "The Lord Stone",
+      "map": "skyrim",
+      "x": 5821,
+      "y": 56398,
+      "noScreenshot": true
+    },
+    "atronach-stone": {
+      "nameEn": "The Atronach Stone",
+      "map": "skyrim",
+      "x": 130939,
+      "y": -28770,
+      "noScreenshot": true
+    },
+    "steed-stone": {
+      "nameEn": "The Steed Stone",
+      "map": "skyrim",
+      "x": -96270,
+      "y": 115526
+    },
+    "mzinchaleft": {
+      "nameEn": "Mzinchaleft",
+      "map": "skyrim",
+      "x": 6984,
+      "y": 83956
+    },
+    "shrine-of-azura": {
+      "nameEn": "Shrine of Azura",
+      "map": "skyrim",
+      "x": 111395,
+      "y": 77770
+    },
+    "dustmans-cairn": {
+      "nameEn": "Dustman's Cairn",
+      "map": "skyrim",
+      "x": -17461,
+      "y": 18255
+    },
+    "gallows-rock": {
+      "nameEn": "Gallows Rock",
+      "map": "skyrim",
+      "x": 100514,
+      "y": 5878
+    },
+    "glenmoril-coven": {
+      "nameEn": "Glenmoril Coven",
+      "map": "skyrim",
+      "x": -78690,
+      "y": -55425
+    },
+    "driftshade-refuge": {
+      "nameEn": "Driftshade Refuge",
+      "map": "skyrim",
+      "x": 55737,
+      "y": 79560,
+      "noScreenshot": true
+    },
+    "ysgramors-tomb": {
+      "nameEn": "Ysgramor's Tomb",
+      "map": "skyrim",
+      "x": 94633,
+      "y": 120812
+    },
+    "bloated-mans-grotto": {
+      "nameEn": "Bloated Man's Grotto",
+      "map": "skyrim",
+      "x": -37647,
+      "y": -36967
+    },
+    "white-ridge-barrow": {
+      "nameEn": "White Ridge Barrow",
+      "map": "solstheim",
+      "x": 33692,
+      "y": 76147,
+      "noScreenshot": true
+    },
+    "tel-mithryn": {
+      "nameEn": "Tel Mithryn",
+      "map": "solstheim",
+      "x": 75484,
+      "y": 23835
+    },
+    "nchardak": {
+      "nameEn": "Nchardak",
+      "map": "solstheim",
+      "x": 84722,
+      "y": 40363
+    }
+  }
+}
